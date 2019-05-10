@@ -1,0 +1,40 @@
+name: flutter_dev #应用或包名称。
+description: 测试 #应用或包的描述、简介。
+version: 1.0.0+1 #应用或包的版本号。
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies: #应用或包依赖的其它包或插件。
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  english_words: ^3.1.5
+  flutter_staggered_grid_view: "^0.2.7"
+
+dev_dependencies: #开发环境依赖的工具包（而不是flutter应用本身依赖的包）。
+  flutter_test:
+    sdk: flutter
+
+flutter: #flutter相关的配置选项。
+  uses-material-design: true #默认包含了一套Material Design的字体图标
+
+  assets: #资源配置
+    - Images/0.jpg
+    - Images/1.jpg
+    - Images/2.jpg
+    - Images/3.jpg
+    - Images/4.jpg
+    - Images/5.jpg
+    - Images/6.jpg
+    - Images/7.jpg
+    - Images/8.jpg
+    - Images/9.jpg
+
+
+  fonts:
+    - family: MaterialIcons  #指定一个字体名
+#      fonts:
+#        - asset: fonts/iconfont.ttf
+
+
