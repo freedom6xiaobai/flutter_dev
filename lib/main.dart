@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:english_words/english_words.dart';
 import 'MyPage.dart';
 import 'BasicsLib.dart';
@@ -19,6 +20,13 @@ import 'DevPartyGrideView.dart';
 import 'DevCustomScrollView.dart';
 import 'DevListenScrollView.dart';
 import 'DevIncidentPage.dart';
+import 'DevNotification.dart';
+import 'DevAnimation.dart';
+import 'DevPushRoute.dart';
+import 'DevCustomWidget.dart';
+import 'DevTurnBox.dart';
+import 'DevRenjuPage.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -243,6 +251,63 @@ class MyApp extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       DevIncidentTestRoute()));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("通知Notification"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      DevNotificationTestRoute()));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("动画"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) =>
+                                      DevAnimationTestRoute()));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("自定义路由跳转"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DevPushTestRoute()));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("自定义控件"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      DevCustomWidgetTestRoute()));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("TurnBox控件,旋转控件"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DevTurnBoxTestRoute()));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("五子棋"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DevRenjuPageTestRoute()));
                         },
                       ),
                     ],
