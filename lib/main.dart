@@ -26,7 +26,10 @@ import 'DevPushRoute.dart';
 import 'DevCustomWidget.dart';
 import 'DevTurnBox.dart';
 import 'DevRenjuPage.dart';
-
+import 'DevGetFilePathPage.dart';
+import 'DevHttpClient.dart';
+import 'DevDioClient.dart';
+import 'DevWebSockets.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,16 +50,52 @@ class MyApp extends StatelessWidget {
             title: Text('测试'),
           ),
           body: Builder(
-              builder: (context) => ListView(
+              builder: (context) =>
+                  ListView(
                     children: <Widget>[
+                      RaisedButton(
+                        child: Text("webSocket"),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => DevWebSocketsTestRoute()
+                          ));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("获取沙盒文件夹"),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return DevGetFileTestRoute();
+                              }));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("网络请求"),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return DevHttpClientTestRoute();
+                              }));
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text("第三方网络库 Dio http库"),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return DevDioClientTestRoute();
+                              }));
+                        },
+                      ),
                       RaisedButton(
                         child: Text("推上去页面"),
                         onPressed: () {
                           Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => NewRoute(),
-                                      fullscreenDialog: true))
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => NewRoute(),
+                                  fullscreenDialog: true))
                               .then((d) {
                             print(d); //回调
                             debugDumpRenderTree();
@@ -307,7 +346,8 @@ class MyApp extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DevRenjuPageTestRoute()));
+                                  builder: (context) =>
+                                      DevRenjuPageTestRoute()));
                         },
                       ),
                     ],
